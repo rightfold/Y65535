@@ -8,7 +8,8 @@
 
 Y65535::Player::Player()
     : position(0.0f)
-    , velocity(0.0f, 0.0f, -Constants::playerSpeed) {
+    , velocity(0.0f, 0.0f, -Constants::playerSpeed)
+    , tSinceShoot(0.0f) {
 }
 
 void Y65535::Player::Step(float dt, Input const& i, Bullets& bullets) {
