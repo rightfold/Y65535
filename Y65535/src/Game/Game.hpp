@@ -4,6 +4,7 @@
 #include "Entity/Bombs.hpp"
 #include "Entity/Bullets.hpp"
 #include "Entity/Enemies.hpp"
+#include "Entity/Explosions.hpp"
 #include "Entity/Junks.hpp"
 #include "Entity/Player.hpp"
 
@@ -27,6 +28,7 @@ namespace Y65535 {
         Bombs bombs;
         Bullets bullets;
         Enemies enemies;
+        Explosions explosions;
         Junks junks;
         Player player;
     };

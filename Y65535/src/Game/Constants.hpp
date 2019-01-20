@@ -11,6 +11,9 @@ namespace Y65535::Constants {
     constexpr auto enemyShootInterval = 1.0f;
     constexpr auto enemySpeed = 150.0f;
 
+    constexpr auto explosionScale = 7.0f;
+    constexpr auto maxExplosionAge = 2.0f;
+
     constexpr auto playerRadius = 5.0f;
     constexpr auto playerShootInterval = 0.2f;
     constexpr auto playerSpeed = 150.0f;

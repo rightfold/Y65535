@@ -38,7 +38,8 @@ Y65535::Game::Game() {
 void Y65535::Game::Step(float dt, Input const& i) {
     bombs.Step(player);
     bullets.Step(dt, enemies, player);
-    enemies.Step(dt, bullets, player);
+    enemies.Step(dt, bullets, explosions, player);
+    explosions.Step(dt);
     junks.Step(dt, player);
     player.Step(dt, i, bullets);
 }
@@ -58,5 +59,6 @@ void Y65535::Game::Draw(float w, float h) const {
     bombs.Draw(assets, c);
     bullets.Draw(assets, c);
     enemies.Draw(assets, c);
+    explosions.Draw(assets, c);
     junks.Draw(assets, c);
 }

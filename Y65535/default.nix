@@ -40,9 +40,12 @@ in
             cp -Rs '${blendAsset  "/src/Game/Assets/Bomb.blend"}/src' .
             cp -Rs '${blendAsset  "/src/Game/Assets/BulletA.blend"}/src' .
             cp -Rs '${blendAsset  "/src/Game/Assets/EnemyA.blend"}/src' .
+            cp -Rs '${blendAsset  "/src/Game/Assets/ExplosionA.blend"}/src' .
             cp -Rs '${blendAsset  "/src/Game/Assets/JunkA.blend"}/src' .
             cp -Rs '${stringAsset "/src/Game/Assets/GenericShader.frag"}/src' .
             cp -Rs '${stringAsset "/src/Game/Assets/GenericShader.vert"}/src' .
+            cp -Rs '${stringAsset "/src/Game/Assets/ParticleShader.frag"}/src' .
+            cp -Rs '${stringAsset "/src/Game/Assets/ParticleShader.vert"}/src' .
 
             make -f tools/Makefile -j4
         '';
