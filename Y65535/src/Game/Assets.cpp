@@ -3,6 +3,10 @@
 #include <vector>
 
 namespace {
+    std::vector<Y65535::GenericShader::Vertex> bombVertices{
+        #include "Assets/Bomb.blend.ipp"
+    };
+
     std::vector<Y65535::GenericShader::Vertex> bulletAVertices{
         #include "Assets/BulletA.blend.ipp"
     };
@@ -17,7 +21,8 @@ namespace {
 }
 
 Y65535::Assets::Assets()
-    : bulletA(bulletAVertices)
+    : bomb(bombVertices)
+    , bulletA(bulletAVertices)
     , junkA(junkAVertices)
     , enemyA(enemyAVertices) {
 }

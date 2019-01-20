@@ -10,6 +10,13 @@ Y65535::Game::Game() {
     std::mt19937 rng(random());
     std::uniform_int_distribution<> dist(-3000, +1000);
 
+    for (int i = 0; i < 10; ++i) {
+        auto position = glm::vec3(dist(rng) / 6.0,
+                                  dist(rng) / 6.0,
+                                  dist(rng) - 1000.0);
+        bombs.Spawn(position);
+    }
+
     for (int i = 0; i < 8; ++i) {
         auto position = glm::vec3(dist(rng) / 6.0,
                                   dist(rng) / 6.0,
@@ -29,6 +36,7 @@ Y65535::Game::Game() {
 }
 
 void Y65535::Game::Step(float dt, Input const& i) {
+    bombs.Step(player);
     bullets.Step(dt, enemies, player);
     enemies.Step(dt, bullets, player);
     junks.Step(dt, player);
@@ -47,6 +55,7 @@ void Y65535::Game::Draw(float w, float h) const {
     c.vp = vp;
     c.lightPosition = eye + glm::vec3(0.0f, 5.0f, 0.0f);
 
+    bombs.Draw(assets, c);
     bullets.Draw(assets, c);
     enemies.Draw(assets, c);
     junks.Draw(assets, c);

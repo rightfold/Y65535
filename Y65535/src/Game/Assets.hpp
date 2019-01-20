@@ -10,6 +10,7 @@ namespace Y65535 {
         Assets();
 
         GenericShader genericShader;
+        VertexBuffer<GenericShader::Vertex> bomb;
         VertexBuffer<GenericShader::Vertex> bulletA;
         VertexBuffer<GenericShader::Vertex> junkA;
         VertexBuffer<GenericShader::Vertex> enemyA;

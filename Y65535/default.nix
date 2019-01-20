@@ -37,6 +37,7 @@ in
             xxd
         ];
         buildPhase = ''
+            cp -Rs '${blendAsset  "/src/Game/Assets/Bomb.blend"}/src' .
             cp -Rs '${blendAsset  "/src/Game/Assets/BulletA.blend"}/src' .
             cp -Rs '${blendAsset  "/src/Game/Assets/EnemyA.blend"}/src' .
             cp -Rs '${blendAsset  "/src/Game/Assets/JunkA.blend"}/src' .

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Assets.hpp"
+#include "Entity/Bombs.hpp"
 #include "Entity/Bullets.hpp"
 #include "Entity/Enemies.hpp"
 #include "Entity/Junks.hpp"
@@ -23,6 +24,7 @@ namespace Y65535 {
 
         Assets assets;
 
+        Bombs bombs;
         Bullets bullets;
         Enemies enemies;
         Junks junks;
