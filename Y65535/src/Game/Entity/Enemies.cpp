@@ -47,7 +47,8 @@ void Y65535::Enemies::Shoot(float dt, Bullets& bullets) {
 }
 
 void Y65535::Enemies::Spawn(glm::vec3 position) {
-    enemies.push_back({position, glm::vec3(0.0f), 100.0f, 0.0f});
+    enemies.push_back({position, glm::vec3(0.0f),
+                       Constants::enemyInitialHealth, 0.0f});
 }
 
 int Y65535::Enemies::HarmNear(Sphere other, float damage) {
