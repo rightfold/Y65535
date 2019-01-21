@@ -30,6 +30,8 @@ namespace Y65535 {
         struct Junk {
             glm::vec3 position;
             glm::vec3 velocity;
+
+            glm::mat4 Matrix() const;
         };
 
         std::list<Junk> junks;

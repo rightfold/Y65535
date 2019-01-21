@@ -20,7 +20,11 @@ void Y65535::Bombs::Spawn(glm::vec3 position) {
 
 void Y65535::Bombs::Draw(Assets const& a, DrawContext const& c) const {
     for (auto&& bomb : bombs) {
-        auto m = glm::translate(bomb.position);
+        auto m = bomb.Matrix();
         a.genericShader.Draw(a.bomb, m, c.vp, c.lightPosition);
     }
+}
+
+glm::mat4 Y65535::Bombs::Bomb::Matrix() const {
+    return glm::translate(position);
 }

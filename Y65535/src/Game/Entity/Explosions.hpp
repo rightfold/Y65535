@@ -27,6 +27,8 @@ namespace Y65535 {
         struct Explosion {
             glm::vec3 position;
             float age;
+
+            glm::mat4 Matrix() const;
         };
 
         std::list<Explosion> explosions;

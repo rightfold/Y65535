@@ -81,7 +81,7 @@ int Y65535::Enemies::HarmNear(Sphere other, float damage) {
 
 void Y65535::Enemies::Draw(Assets const& a, DrawContext const& c) const {
     for (auto&& enemy : enemies) {
-        auto m = glm::translate(enemy.position);
+        auto m = enemy.Matrix();
         a.genericShader.Draw(a.enemyA, m, c.vp, c.lightPosition);
     }
 }
@@ -92,4 +92,8 @@ bool Y65535::Enemies::Enemy::Alive() const {
 
 Y65535::Sphere Y65535::Enemies::Enemy::Bounds() const {
     return {position, Constants::enemyRadius};
+}
+
+glm::mat4 Y65535::Enemies::Enemy::Matrix() const {
+    return glm::translate(position);
 }

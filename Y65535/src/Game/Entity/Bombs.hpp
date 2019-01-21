@@ -27,6 +27,8 @@ namespace Y65535 {
 
         struct Bomb {
             glm::vec3 position;
+
+            glm::mat4 Matrix() const;
         };
 
         std::list<Bomb> bombs;

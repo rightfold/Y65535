@@ -55,8 +55,7 @@ void Y65535::Bullets::Spawn(glm::vec3 position, glm::vec3 vSource, bool friendly
 
 void Y65535::Bullets::Draw(Assets const& a, DrawContext const& c) const {
     for (auto&& bullet : bullets) {
-        auto m = glm::translate(bullet.position) *
-                 glm::mat4(bullet.Rotation());
+        auto m = bullet.Matrix();
         a.genericShader.Draw(a.bulletA, m, c.vp, c.lightPosition);
     }
 }
@@ -67,4 +66,8 @@ Y65535::Sphere Y65535::Bullets::Bullet::Bounds() const {
 
 glm::quat Y65535::Bullets::Bullet::Rotation() const {
     return glm::quatLookAt(velocity, glm::vec3(0.0f, 1.0f, 0.0f));
+}
+
+glm::mat4 Y65535::Bullets::Bullet::Matrix() const {
+    return glm::translate(position) * glm::mat4(Rotation());
 }

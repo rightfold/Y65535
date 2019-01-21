@@ -27,7 +27,11 @@ void Y65535::Junks::Spawn(glm::vec3 position, glm::vec3 velocity) {
 
 void Y65535::Junks::Draw(Assets const& a, DrawContext const& c) const {
     for (auto&& junk : junks) {
-        auto m = glm::translate(junk.position);
+        auto m = junk.Matrix();
         a.genericShader.Draw(a.junkA, m, c.vp, c.lightPosition);
     }
+}
+
+glm::mat4 Y65535::Junks::Junk::Matrix() const {
+    return glm::translate(position);
 }

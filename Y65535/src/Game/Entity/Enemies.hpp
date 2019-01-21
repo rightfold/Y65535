@@ -46,6 +46,7 @@ namespace Y65535 {
 
             bool Alive() const;
             Sphere Bounds() const;
+            glm::mat4 Matrix() const;
         };
 
         std::list<Enemy> enemies;

@@ -27,9 +27,13 @@ void Y65535::Explosions::Spawn(glm::vec3 position) {
 
 void Y65535::Explosions::Draw(Assets const& a, DrawContext const& c) const {
     for (auto&& explosion : explosions) {
-        auto scale = explosion.age * Constants::explosionScale;
-        auto m = glm::translate(explosion.position) *
-                 glm::scale(glm::vec3(scale));
+        auto m = explosion.Matrix();
         a.particleShader.Draw(a.explosionA, m, c.vp);
     }
+}
+
+glm::mat4 Y65535::Explosions::Explosion::Matrix() const {
+    auto scale = age * Constants::explosionScale;
+    return glm::translate(position) *
+           glm::scale(glm::vec3(scale));
 }

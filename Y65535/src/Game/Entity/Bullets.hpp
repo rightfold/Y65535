@@ -39,8 +39,9 @@ namespace Y65535 {
             bool friendly;
             bool collided;
 
-            glm::quat Rotation() const;
             Sphere Bounds() const;
+            glm::quat Rotation() const;
+            glm::mat4 Matrix() const;
         };
 
         std::list<Bullet> bullets;
