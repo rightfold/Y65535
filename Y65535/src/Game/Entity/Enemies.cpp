@@ -94,6 +94,10 @@ Y65535::Sphere Y65535::Enemies::Enemy::Bounds() const {
     return {position, Constants::enemyRadius};
 }
 
+glm::quat Y65535::Enemies::Enemy::Rotation() const {
+    return glm::quatLookAt(velocity, glm::vec3(0.0f, 1.0f, 0.0f));
+}
+
 glm::mat4 Y65535::Enemies::Enemy::Matrix() const {
-    return glm::translate(position);
+    return glm::translate(position) * glm::mat4(Rotation());
 }
